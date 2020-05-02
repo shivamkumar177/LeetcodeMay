@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int numJewelsInStones(string J, string S) {
+        int a[150]={0};
+        for(char c:J)
+            a[c]++;
+        int ans=0;
+        for(char c:S)
+            if(a[c])ans++;
+        return ans;
+    }
+};
