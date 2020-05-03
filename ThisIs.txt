@@ -1,1 +1,0 @@
-In this I will solve may Leetcode Challenge.
