@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int findComplement(int num) {
+        string s;
+        while(num!=0)
+        {
+            int r=num%2;
+            if(r==1)s+='0';
+            if(r==0)s+='1';
+            num/=2;
+        }
+        reverse(s.begin(),s.end());
+        int y=1,ans=0;
+        if(s[s.length()-1]=='1')ans=1;
+        for(int i=s.length()-2;i>=0;i--)
+        {
+            if(s[i]=='1')ans+=pow(2,y);
+            y++;
+        }
+        return ans;
+    }
+};
