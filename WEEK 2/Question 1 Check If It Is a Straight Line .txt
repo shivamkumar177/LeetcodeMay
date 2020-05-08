@@ -1,0 +1,14 @@
+class Solution {
+public:
+    bool checkStraightLine(vector<vector<int>>& coordinates) {
+        if(coordinates.size()==2)return true;
+        int x,y,eve;
+        eve=(coordinates[1][1]-coordinates[0][1])*(coordinates[2][0]-coordinates[0][0])-(coordinates[1][0]-coordinates[0][0])*(coordinates[2][1]-coordinates[0][1]);
+        //cout<<eve<<endl;
+        for(int i=3;i<coordinates.size();i++)
+        {
+            if((coordinates[1][1]-coordinates[0][1])*(coordinates[i][0]-coordinates[0][0])-(coordinates[1][0]-coordinates[0][0])*(coordinates[i][1]-coordinates[0][1])!=eve)return false;
+        }
+        return true;
+    }
+};
